@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <style>
+    body {
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      background-image: linear-gradient(#100, #001);
+      perspective: 60em;
+      -webkit-perspective: 60em;
+      perspective-origin: top;
+      -webkit-perspective-origin: top;
+      overflow: hidden;
+    }
+    div{
+      height: 500px;
+      width:500px;
+      position: absolute;
+      inset: 0;
+      margin: auto;
+    }
+    div>div{
+      height:100%;
+      width:100%;
+      background-color: limegreen;
+      opacity: 0.1;
+      position: absolute;
+    }
+    div>div:nth-of-type(1){
+      transform: rotateX(92deg) translateY(calc(100%*12)) translateZ(100px);
+      border:1px solid black;
+      z-index:100;
+      background-color: white;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
+
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery-3.6.1.min.js"></script>
+<script></script>
+</body>
+</html>
