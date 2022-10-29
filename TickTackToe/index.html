@@ -3,52 +3,100 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-  <style>
-    body {
-      display: grid;
-      place-items: center;
-      min-height: 100vh;
-      background-image: linear-gradient(#100, #001);
-      perspective: 60em;
-      -webkit-perspective: 60em;
-      perspective-origin: top;
-      -webkit-perspective-origin: top;
-      overflow: hidden;
-    }
-    div{
-      height: 500px;
-      width:500px;
-      position: absolute;
-      inset: 0;
-      margin: auto;
-    }
-    div>div{
-      height:100%;
-      width:100%;
-      background-color: limegreen;
-      opacity: 0.1;
-      position: absolute;
-    }
-    div>div:nth-of-type(1){
-      transform: rotateX(92deg) translateY(calc(100%*12)) translateZ(100px);
-      border:1px solid black;
-      z-index:100;
-      background-color: white;
-    }
-  </style>
+
+    <style>
+        :root {
+            --boxColor: #0ff7;
+        }
+
+        body {
+            background-color: #000;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 75px;
+            perspective: 10em;
+            perspective-origin: 50% calc(50% - 2em);
+        }
+
+        .scene {
+            position: relative;
+            transform-style: preserve-3d;
+        }
+
+        .ball {
+            transform-style: preserve-3d;
+            width: 1em;
+            height: 1em;
+            border-radius: 50%;
+            background: lightblue;
+
+            position: absolute;
+            bottom: 1em;
+            left: -.5em;
+        }
+
+        .cube {
+            transform-style: preserve-3d;
+            width: 2em;
+            height: 2em;
+
+            position: absolute;
+            top: -1em;
+            left: -1em;
+        }
+
+
+        .left, .right, .front, .back {
+            position: absolute;
+            width:100%;
+            height: 100%;
+            background: var(--boxColor);
+        }
+
+        .front{transform: translateZ(1em); }
+        .right{transform: rotateY(90deg) translateZ(1em);}
+        .back{transform: rotateY(180deg) translateZ(1em);}
+        .left{transform: rotateY(270deg) translateZ(1em);}
+
+        .top{
+            position: absolute;
+            width:2em;
+            height: 2em;
+            background: var(--boxColor);
+            transform: translateY(-50%) rotateX(90deg);
+        }
+
+
+        .floor {
+            position: absolute;
+            top: 1em;
+            transform: translate(-50%, -50%) rotateX(90deg);
+            width: 15em;
+            height: 15em;
+            background-image: repeating-conic-gradient(
+                    from 45deg,
+                    #111 0deg 90deg,
+                    #222 90deg 180deg);
+            background-size: 1em 1em;
+        }
+    </style>
 </head>
 <body>
-<div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
-  <div></div>
+<div class="scene">
+    <div class="floor"></div>
+    <div class="cube">
+        <div class="front"></div>
+        <div class="back"></div>
+        <div class="right"></div>
+        <div class="left"></div>
+        <div class="top"></div>
+        <div class="bottom"></div>
+    </div>
+    <div class="ball"></div>
 </div>
 
-<script src="assets/js/bootstrap.min.js"></script>
 <script src="assets/js/jquery-3.6.1.min.js"></script>
 <script></script>
 </body>
