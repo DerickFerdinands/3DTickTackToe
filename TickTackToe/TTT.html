@@ -4,39 +4,49 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+        ::-webkit-scrollbar{
+            width:0;
+        }
         body {
             transform-style: preserve-3d;
-            background-color: #000;
+            background: url('assets/images/bg.webp') center;
+            background-size: cover;
             min-height: 100vh;
-            font-size: 75px;
+            font-size: 70px;
             perspective: 10em;
-            perspective-origin: 50% calc(50% - 2em);
-            font-size: 75px;
-            gap: 5px;
-            width: calc(800px);
-            flex-shrink: 0;
-        }
-        body > section{
-            transform-style: preserve-3d;
+            perspective-origin: 50% 50%;
+            font-size: 105px;
             display: flex;
             justify-content: center;
             align-items: center;
         }
-        body > section > section {
+        body > main{
+            transform-style: preserve-3d;
+        }
+        body > main > section {
+            transform-style: preserve-3d;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            margin: 50px;
+        }
+
+        body > main > section > section {
             transform-style: preserve-3d;
             width: 2em;
             height: 2em;
-
             transform: translateZ(-100px);
         }
 
-        body > section > section > div {
+        body > main > section > section > div {
             transform-style: preserve-3d;
             position: absolute;
             height: 100%;
             width: 100%;
-            background-color: white;
-            opacity: 0.2;
+            background-color: #165230;
+            opacity: .7;
+            border: 1px solid #0A305C;
         }
 
         .front {
@@ -65,96 +75,98 @@
     </style>
 </head>
 <body>
-<section>
+
+<main>
     <section>
-        <div class="front"></div>
-        <div class="back"></div>
-        <div class="left"></div>
-        <div class="right"></div>
-        <div class="top"></div>
-        <div class="bottom"></div>
+        <section>
+            <div class="front"></div>
+            <div class="back"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
 
+        </section>
+        <section>
+            <div class="front"></div>
+            <div class="back"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+
+        </section>
+        <section>
+            <div class="front"></div>
+            <div class="back"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+
+        </section>
     </section>
+
     <section>
-        <div class="front"></div>
-        <div class="back"></div>
-        <div class="left"></div>
-        <div class="right"></div>
-        <div class="top"></div>
-        <div class="bottom"></div>
+        <section>
+            <div class="front"></div>
+            <div class="back"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
 
+        </section>
+        <section>
+            <div class="front"></div>
+            <div class="back"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+
+        </section>
+        <section>
+            <div class="front"></div>
+            <div class="back"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+
+        </section>
     </section>
+
     <section>
-        <div class="front"></div>
-        <div class="back"></div>
-        <div class="left"></div>
-        <div class="right"></div>
-        <div class="top"></div>
-        <div class="bottom"></div>
+        <section>
+            <div class="front"></div>
+            <div class="back"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
 
+        </section>
+        <section>
+            <div class="front"></div>
+            <div class="back"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+
+        </section>
+        <section>
+            <div class="front"></div>
+            <div class="back"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"></div>
+            <div class="bottom"></div>
+
+        </section>
     </section>
-</section>
-
-<section>
-    <section>
-        <div class="front"></div>
-        <div class="back"></div>
-        <div class="left"></div>
-        <div class="right"></div>
-        <div class="top"></div>
-        <div class="bottom"></div>
-
-    </section>
-    <section>
-        <div class="front"></div>
-        <div class="back"></div>
-        <div class="left"></div>
-        <div class="right"></div>
-        <div class="top"></div>
-        <div class="bottom"></div>
-
-    </section>
-    <section>
-        <div class="front"></div>
-        <div class="back"></div>
-        <div class="left"></div>
-        <div class="right"></div>
-        <div class="top"></div>
-        <div class="bottom"></div>
-
-    </section>
-</section>
-
-<section>
-    <section>
-        <div class="front"></div>
-        <div class="back"></div>
-        <div class="left"></div>
-        <div class="right"></div>
-        <div class="top"></div>
-        <div class="bottom"></div>
-
-    </section>
-    <section>
-        <div class="front"></div>
-        <div class="back"></div>
-        <div class="left"></div>
-        <div class="right"></div>
-        <div class="top"></div>
-        <div class="bottom"></div>
-
-    </section>
-    <section>
-        <div class="front"></div>
-        <div class="back"></div>
-        <div class="left"></div>
-        <div class="right"></div>
-        <div class="top"></div>
-        <div class="bottom"></div>
-
-    </section>
-</section>
-
+</main>
 
 </body>
 </html>
