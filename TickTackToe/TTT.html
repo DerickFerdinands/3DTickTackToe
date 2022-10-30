@@ -3,15 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <style>
-        ::-webkit-scrollbar{
-            width:0;
+        ::-webkit-scrollbar {
+            width: 0;
         }
+
+        body > h1 {
+            position: absolute;
+            font-family: poppins, sans-serif;
+            font-size: 50px;
+            font-weight: 600;
+            top: 0;
+            left: 0;
+        }
+
         body {
             transform-style: preserve-3d;
             background: url('assets/images/bg.webp') center;
             background-size: cover;
-            min-height: 100vh;
+            height: 100vh;
             font-size: 70px;
             perspective: 10em;
             perspective-origin: 50% 50%;
@@ -19,16 +31,21 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow: hidden;
         }
-        body > main{
+
+        body > main {
             transform-style: preserve-3d;
+            margin-top: 100px;
         }
+
         body > main > section {
             transform-style: preserve-3d;
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 50px;
+            transform: translateZ(-150px);
             margin: 50px;
         }
 
@@ -36,17 +53,45 @@
             transform-style: preserve-3d;
             width: 2em;
             height: 2em;
-            transform: translateZ(-100px);
+            background: #2C2E3A;
         }
 
         body > main > section > section > div {
+            font-family: poppins, sans-serif;
             transform-style: preserve-3d;
             position: absolute;
             height: 100%;
             width: 100%;
-            background-color: #165230;
-            opacity: .7;
-            border: 1px solid #0A305C;
+            background-color: #2C2E3A;
+            opacity: .9;
+            border: .5px solid #141A26;
+            box-shadow: 0 0 0.5em #000a inset;
+        }
+
+        .x {
+            width: max-content;
+            height: max-content;
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            color: white;
+            margin: auto;
+            color: #094c4c;
+
+            text-shadow: 0px 0px 10px #FAFFFF;
+        }
+
+        .y {
+            width: max-content;
+            height: max-content;
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            color: white;
+            margin: auto;
+            color: #7e1341;
+
+            text-shadow: 0px 0px 10px #FAFFFF;
         }
 
         .front {
@@ -72,101 +117,124 @@
         .bottom {
             transform: rotateX(270deg) translateZ(1em);
         }
+
+        img {
+            height: 60%;
+            width: auto;
+            position: absolute;
+            inset: 0;
+            margin: auto;
+        }
+        main>section>section{
+            transition: all ease-in .3s;
+        }
     </style>
 </head>
 <body>
-
+<h1>Scores X:<span>100</span> O: <span>100</span></h1>
 <main>
     <section>
-        <section>
-            <div class="front"></div>
+        <section id="one1">
+            <div class="front"><img alt="" src="assets/images/saturn-planet-4693533-3895598.png"></div>
             <div class="back"></div>
             <div class="left"></div>
             <div class="right"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
+            <div class="top"><h1 class="x">X</h1></div>
+            <div class="bottom"><h1 class="y">O</h1></div>
 
         </section>
-        <section>
-            <div class="front"></div>
+        <section id="one2">
+            <div class="front"><img alt="" src="assets/images/saturn-planet-4693533-3895598.png"></div>
             <div class="back"></div>
             <div class="left"></div>
             <div class="right"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
+            <div class="top"><h1 class="x">X</h1></div>
+            <div class="bottom"><h1 class="y">O</h1></div>
 
         </section>
-        <section>
-            <div class="front"></div>
+        <section id="one3">
+            <div class="front"><img alt="" src="assets/images/saturn-planet-4693533-3895598.png"></div>
             <div class="back"></div>
             <div class="left"></div>
             <div class="right"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-
-        </section>
-    </section>
-
-    <section>
-        <section>
-            <div class="front"></div>
-            <div class="back"></div>
-            <div class="left"></div>
-            <div class="right"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-
-        </section>
-        <section>
-            <div class="front"></div>
-            <div class="back"></div>
-            <div class="left"></div>
-            <div class="right"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
-
-        </section>
-        <section>
-            <div class="front"></div>
-            <div class="back"></div>
-            <div class="left"></div>
-            <div class="right"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
+            <div class="top"><h1 class="x">X</h1></div>
+            <div class="bottom"><h1 class="y">O</h1></div>
 
         </section>
     </section>
 
     <section>
-        <section>
-            <div class="front"></div>
+        <section id="two1">
+            <div class="front"><img alt="" src="assets/images/saturn-planet-4693533-3895598.png"></div>
             <div class="back"></div>
             <div class="left"></div>
             <div class="right"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
+            <div class="top"><h1 class="x">X</h1></div>
+            <div class="bottom"><h1 class="y">O</h1></div>
 
         </section>
-        <section>
-            <div class="front"></div>
+        <section id="two2">
+            <div class="front"><img alt="" src="assets/images/saturn-planet-4693533-3895598.png"></div>
             <div class="back"></div>
             <div class="left"></div>
             <div class="right"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
+            <div class="top"><h1 class="x">X</h1></div>
+            <div class="bottom"><h1 class="y">O</h1></div>
 
         </section>
-        <section>
-            <div class="front"></div>
+        <section id="two3">
+            <div class="front"><img alt="" src="assets/images/saturn-planet-4693533-3895598.png"></div>
             <div class="back"></div>
             <div class="left"></div>
             <div class="right"></div>
-            <div class="top"></div>
-            <div class="bottom"></div>
+            <div class="top"><h1 class="x">X</h1></div>
+            <div class="bottom"><h1 class="y">O</h1></div>
+
+        </section>
+    </section>
+
+    <section>
+        <section id="three1">
+            <div class="front"><img alt="" src="assets/images/saturn-planet-4693533-3895598.png"></div>
+            <div class="back"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"><h1 class="x">X</h1></div>
+            <div class="bottom"><h1 class="y">O</h1></div>
+
+        </section>
+        <section id="three2">
+            <div class="front"><img alt="" src="assets/images/saturn-planet-4693533-3895598.png"></div>
+            <div class="back"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"><h1 class="x">X</h1></div>
+            <div class="bottom"><h1 class="y">O</h1></div>
+
+        </section>
+        <section id="three3">
+            <div class="front"><img alt="" src="assets/images/saturn-planet-4693533-3895598.png"></div>
+            <div class="back"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="top"><h1 class="x">X</h1></div>
+            <div class="bottom"><h1 class="y">O</h1></div>
 
         </section>
     </section>
 </main>
-
+<script src="assets/js/jquery-3.6.1.min.js"></script>
+<script>
+    let x = true;
+    $('main>section>section').click(function () {
+        if (x) {
+            $(this).css('transform', 'rotateX(-90deg)');
+            x = false;
+        } else {
+            $(this).css('transform', 'rotateX(90deg)');
+            x = true;
+        }
+    });
+</script>
 </body>
 </html>
