@@ -54,6 +54,7 @@
             width: 2em;
             height: 2em;
             background: #2C2E3A;
+            cursor: pointer;
         }
 
         body > main > section > section > div {
@@ -125,8 +126,15 @@
             inset: 0;
             margin: auto;
         }
-        main>section>section{
+
+        main > section > section {
             transition: all ease-in .3s;
+        }
+
+        * {
+            -webkit-user-select: none; /* Safari */
+            -ms-user-select: none; /* IE 10 and IE 11 */
+            user-select: none;
         }
     </style>
 </head>
@@ -226,15 +234,161 @@
 <script src="assets/js/jquery-3.6.1.min.js"></script>
 <script>
     let x = true;
+    const cube = new Cube();
     $('main>section>section').click(function () {
-        if (x) {
-            $(this).css('transform', 'rotateX(-90deg)');
-            x = false;
-        } else {
-            $(this).css('transform', 'rotateX(90deg)');
-            x = true;
+        if (!cube.CubeExists(this)) {
+            cube.AddCube(x, this);
+            if (x) {
+                $(this).css('transform', 'rotateX(-90deg)');
+                x = false;
+            } else {
+                $(this).css('transform', 'rotateX(90deg)');
+                x = true;
+            }
         }
     });
+
+
+    function Cube() {
+        let objs = [];
+        this.AddCube = function (bool, cube) {
+            objs.push(new GetObj(bool, cube));
+            checkWinner();
+        }
+        this.CubeExists = function (cube) {
+            for (obj of objs) {
+                if (obj.getObjCube() === cube) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function GetObj(bool, cube) {
+            let objBool = bool;
+            let objCube = cube;
+
+            this.getObjCube = function () {
+                return objCube;
+            }
+
+            this.getObjBool = function () {
+                return objBool;
+            }
+
+        }
+
+        let checkWinner = function () {
+            let one1 = null;
+            let one2 = null;
+            let one3 = null;
+            let two1 = null;
+            let two2 = null;
+            let two3 = null;
+            let three1 = null;
+            let three2 = null;
+            let three3 = null;
+            for (obj of objs) {
+                console.log(obj.getObjCube().id);
+                switch (obj.getObjCube().id) {
+                    case 'one1':
+                        one1 = obj.getObjBool();
+                        break;
+                    case 'one2':
+                        one2 = obj.getObjBool();
+                        break;
+                    case 'one3':
+                        one3 = obj.getObjBool();
+                        break;
+                    case 'two1':
+                        two1 = obj.getObjBool();
+                        break;
+                    case 'two2':
+                        two2 = obj.getObjBool();
+                        break;
+                    case 'two3':
+                        two3 = obj.getObjBool();
+                        break;
+                    case 'three1':
+                        three1 = obj.getObjBool();
+                        break;
+                    case 'three2':
+                        three2 = obj.getObjBool();
+                        break;
+                    case 'three3':
+                        three3 = obj.getObjBool();
+                        break;
+                }
+            }
+            if (one1 == one2 && one2 == one3 & one1 != null) {
+                let winner;
+                if (one1 == true) {
+                    winner = 'X';
+                } else {
+                    winner = 'Y';
+                }
+                alert('Winner: '+winner);
+            } else if (two1 == two2 && two2 == two3 & two1 != null) {
+                let winner;
+                if (two1 == true) {
+                    winner = 'X';
+                } else {
+                    winner = 'Y';
+                }
+                alert('Winner: '+winner);
+            } else if (three1 == three2 && three2 == three3 & three1 != null) {
+                let winner;
+                if (three1 == true) {
+                    winner = 'X';
+                } else {
+                    winner = 'Y';
+                }
+                alert('Winner: '+winner);
+            } else if (one1 == two1 && two1 == three1 & one1 != null) {
+                let winner;
+                if (one1 == true) {
+                    winner = 'X';
+                } else {
+                    winner = 'Y';
+                }
+                alert('Winner: '+winner);
+            } else if (one2 == two2 && two2 == three2 & one2 != null) {
+                let winner;
+                if (one2 == true) {
+                    winner = 'X';
+                } else {
+                    winner = 'Y';
+                }
+                alert('Winner: '+winner);
+            } else if (one3 == two3 && two3 == three3 & one3 != null) {
+                let winner;
+                if (one3 == true) {
+                    winner = 'X';
+                } else {
+                    winner = 'Y';
+                }
+                alert('Winner: '+winner);
+            } else if (one1 == two2 && two2 == three3 & one1 != null) {
+                let winner;
+                if (one1 == true) {
+                    winner = 'X';
+                } else {
+                    winner = 'Y';
+                }
+                alert('Winner: '+winner);
+            } else if (one3 == two2 && two2 == three1 & one3 != null) {
+                let winner;
+                if (one3 == true) {
+                    winner = 'X';
+                } else {
+                    winner = 'Y';
+                }
+                alert('Winner: '+winner);
+            }
+
+        }
+    }
+
 </script>
 </body>
 </html>
